@@ -1,0 +1,8 @@
+[package]
+name = "webodb-server"
+version = "0.1.0"
+authors = ["Mike Bush <platy@njk.onl>"]
+edition = "2018"
+
+[dependencies]
+git2 = { version = "0.13.12", default-features = false }

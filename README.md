@@ -47,8 +47,6 @@ Query = Oid [ Commit-Query ] | [ Tree-Query ]
 Commit-Query = [ Ancestor-Ref ] [ .tree ]
 Tree-Query = .blobs | .tree : only valid if the preceding part of the query refers to a tree, resolves to the whole tree and (with .blobs) all of the referred blobs
 
-Oid [^ancestor number]
-
 ### Read-only bare git
 
 For read-only git without any working copy or indexes, it doesn't seem there is that much needed:

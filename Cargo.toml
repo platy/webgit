@@ -6,6 +6,3 @@ edition = "2018"
 
 [workspace]
 members = ["webodb-server"]
-
-[dependencies]
-futures-util = "0.3.6"

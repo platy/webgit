@@ -50,9 +50,9 @@ Tree-Query = .blobs | .tree : only valid if the preceding part of the query refe
 ### Read-only bare git
 
 For read-only git without any working copy or indexes, it doesn't seem there is that much needed:
-* refs
+* refs (with push updates)
 * parsing commit messages
-* iterating over trees
+* iterating over trees (i can't remember what this means)
 * revwalk
 
 #### Messages
@@ -66,7 +66,7 @@ The client stores revs, provides an api for getting and inspecting commits, usin
 
 ### extension: Commit search
 
-This one may be more like the reactive query like with the transit radar. Client and server both perform the same search. If possible it would work sort of similar to revwalk and may even be an extension of revwalk, it needs to be able to limit the number of results.
+This one may be more like the reactive query like with the transit radar. Client and server both perform the same search. If possible it would work sort of similar to revwalk and may even be an extension of revwalk using a ref made for the search, it needs to be able to limit the number of results.
 
 Search commit message terms, date, paths changed
 
@@ -77,3 +77,9 @@ Search inside all blobs in a history, this would then also need to push all the 
 ### extension: File/Tree history
 
 By specifying a path in a commit, find the history of changes of that path.
+
+
+# Future
+
+If this does develop into something that should deal with creating commits and merges, [jujube](https://github.com/martinvonz/jj) might be more usable than a thinner wrapper around git - jujube stores the working copy and conflicts in the odb, in the web there is no fs so they need to be stored somewhere and in the odb they can be backed up and synced across devices. The conflict handling might make it interesting for collaborative conflict solving in the web.
+
